@@ -4,7 +4,8 @@ from profiles.models import Profile
 
 
 def user_posts(instance, filename):
-    return 'posts/{0}/{1}'.format(instance.user.id, filename)
+        return 'posts/{0}/{1}'.format(instance.author.id, filename)
+
 
 class Post(models.Model):
     content = models.TextField()
