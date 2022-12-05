@@ -43,7 +43,8 @@ class Post(models.Model):
 class Comment(models.Model):
     user = models.ForeignKey(
         Profile,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        # related_name=comment_set
     )
     post = models.ForeignKey(
         Post,
@@ -69,7 +70,8 @@ LIKE_CHOICES = (
 class Like(models.Model):
     user = models.ForeignKey(
         Profile,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        # related_name= like_set
     )
     post = models.ForeignKey(
         Post,
